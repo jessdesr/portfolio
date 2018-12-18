@@ -1,5 +1,7 @@
 <template>
   <div class="sidebar">
+    <div class="logo">
+    </div>
     <div class="profile">
       <img src="../assets/logo.svg">
       <h5>Jess Desrochers</h5>
@@ -22,6 +24,13 @@ export default {}
 </script>
 
 <style lang="scss">
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+  }
   .sidebar {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     height: 100vh;
@@ -31,7 +40,7 @@ export default {}
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #212121;
+    background: #2d3844;
     color: #ccc;
     transition: all 0.3s;
   }

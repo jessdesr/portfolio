@@ -1,29 +1,109 @@
 <template>
   <div class="card card-1">
-    <h4 class="card-title">Profile</h4>
     <div class="card-body">
-     normcore PBR&B four loko farm-to-table Tumblr beard literally wayfarers fanny pack kitsch crucifix Marfa trust fund whatever before they sold out plaid squid Brooklyn gastropub letterpress lo-fi art party ugh vegan ennui dreamcatcher semiotics chia Portland scenester pop-up Banksy artisan Carles kale chips roof party forage twee chambray cliche 3 wolf moon DIY Etsy ethical cardigan gluten-free bitters Truffaut deep v food truck flexitarian cornhole keytar stumptown meh tote bag sriracha Cosby sweater mumblecore gentrify yr master cleanse Tonx chillwave fingerstache aesthetic viral salvia wolf American Apparel fashion axe distillery sartorial Odd Future retro messenger bag readymade 90's quinoa Williamsburg Austin paleo YOLO shabby chic church-key hoodie swag synth tousled selfies Pitchfork you probably haven't heard of them meggings Bushwick Vice hashtag asymmetrical tattooed put a bird on it cred Shoreditch leggings freegan drinking vinegar try-hard Neutra hella photo booth narwhal banh mi organic pug fap typewriter Helvetica fixie VHS authentic raw denim Pinterest brunch cray irony craft beer blog single-origin coffee direct trade  street art pickled Intelligentsia next level keffiyeh umami lomo PBR jean shorts XOXO sustainable Blue Bottle mlkshk McSweeney's kogi locavore small batch Kickstarter iPhone butcher seitan selvage +1 Echo Park skateboard biodiesel 8-bit Wes Anderson High Life polaroid pour-over Thundercats vinyl heirloom bicycle rights Schlitz mixtape occupy disrupt Godard flannel tofu mustache banjo pork belly actually bespoke slow-carb post-ironic
+      <div class="card-profile">
+        <img class="img-profile" src="../assets/profile.png">
+        <h4> Jess Desrochers </h4>
+        <h6> Software Developer </h6>
+        <div class="card-profile-icon-group">
+          <ul>
+            <li>
+              <a href="https://github.com/jessdesr" title="Github" target="_blank">
+                <img src="../assets/github.svg"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/jess_desrochers" title="Twitter" target="_blank">
+                <img src="../assets/twitter.svg"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/jess-desrochers" title="LinkedIn" target="_blank">
+                <img src="../assets/linkedin.svg"/>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
   .card {
-    background: #424242;
-    color: #fff;
-    border-radius: 2px;
-    display: inline-block;
-    margin: 1rem;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    overflow: hidden;
     position: relative;
-    width: 300px;
+    background: #fff;
+    border-radius: .25rem;
+    border: 0px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    z-index: 1;
+
+    &-profile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.75rem;
+      text-align: center;
+    }
+
+    h4 {
+      font-size: 1.125rem;
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+
+    h6 {
+      margin-top: .25rem;
+      font-size: .8125rem;
+      font-weight: 400;
+      color: rgba(0,0,0,.54);
+    }
   }
 
   .card-1 {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
   }
 
   .card-1:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  }
+
+  .img-profile {
+    border-radius: 50%;
+    width: 60%;
+  }
+
+  .card-profile-icon-group {
+    font-size: 1.5rem;
+    ul {
+      display: flex;
+      align-items: center;
+      max-width: 200px;
+      margin: 0 auto;
+      padding: 0;
+      list-style-type: none;
+      li {
+        text-decoration: none;
+        outline: 0;
+        a {
+          padding: .5rem;
+          img {
+            height: 22px;
+          }
+
+        }
+
+      }
+
+    }
   }
 </style>
