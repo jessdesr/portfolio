@@ -7,19 +7,9 @@
         <h6> Software Developer </h6>
         <div class="card-profile-icon-group">
           <ul>
-            <li>
-              <a href="https://github.com/jessdesr" title="Github" target="_blank">
-                <img src="../assets/github.svg"/>
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/jess_desrochers" title="Twitter" target="_blank">
-                <img src="../assets/twitter.svg"/>
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/jess-desrochers" title="LinkedIn" target="_blank">
-                <img src="../assets/linkedin.svg"/>
+            <li v-for="(external, index) in externals" :key="index">
+              <a :href="external.link" :title="external.title" target="_blank">
+                <img :src="external.source"/>
               </a>
             </li>
           </ul>
@@ -29,57 +19,28 @@
   </div>
 </template>
 
+<script>
+const github   = require('../assets/github.svg')
+const twitter  = require('../assets/twitter.svg')
+const linkedin = require('../assets/linkedin.svg')
+
+export default {
+  data () {
+    return {
+      externals: [
+        { title: 'Github', link: 'https://github.com/jessdesr', source: github },
+        { title: 'Twitter', link: 'https://twitter.com/jess_desrochers', source: twitter },
+        { title: 'LinkedIn', link: 'https://linkedin.com/jess-desrochers', source: linkedin }
+      ]
+    }
+  }
+}
+</script>
+
 <style lang="scss">
-  .card {
-    flex-direction: column;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    font-weight: 400;
-    overflow: hidden;
-    position: relative;
-    background: #fff;
-    border-radius: .25rem;
-    border: 0px;
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
-    -webkit-tap-highlight-color: transparent;
-    -webkit-tap-highlight-color: rgba(255,255,255,0);
-    z-index: 1;
-
-    &-profile {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1.75rem;
-      text-align: center;
-    }
-
-    h4 {
-      font-size: 1.125rem;
-      margin-top: 1rem;
-      margin-bottom: 0;
-    }
-
-    h6 {
-      margin-top: .25rem;
-      font-size: .8125rem;
-      font-weight: 400;
-      color: rgba(0,0,0,.54);
-    }
-  }
-
-  .card-1 {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
-  }
-
-  .card-1:hover {
-    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
-  }
-
   .img-profile {
     border-radius: 50%;
-    width: 60%;
+    width: 8rem;
   }
 
   .card-profile-icon-group {
@@ -97,7 +58,7 @@
         a {
           padding: .5rem;
           img {
-            height: 22px;
+            height: 1.375rem;
           }
 
         }
