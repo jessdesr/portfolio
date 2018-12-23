@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
-    <div class="logo">
-    </div>
+    <!-- <div class="logo">
+    </div> -->
     <div class="profile">
       <img src="../assets/logo.svg">
       <h5>Jess Desrochers</h5>
@@ -10,9 +10,10 @@
     <div class="nav-list">
       <div class="nav">
         <ul>
-          <li>Profile</li>
-          <li>Projects</li>
-          <li>Experiments</li>
+          <li><a href="#/profile">Profile</a></li>
+          <li><a href="#/resume">Resume</a></li>
+          <li><a href="#/projects">Projects</a></li>
+          <li><a href="#/projects">Posts</a></li>
         </ul>
       </div>
     </div>
@@ -49,11 +50,31 @@ export default {}
     padding: .9125rem;
     text-align: center;
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
+
+    img {
+      height: 8rem;
+      margin-bottom: 1rem;
+    }
   }
 
-  h5, h6 {
+  h5 {
+    margin-bottom: 0.25rem;
+  }
+
+  h6 {
+    font-size: 0.875rem;
     font-weight: 200;
     line-height: 1;
+  }
+
+  ul {
+    margin-top: 20px;
+  }
+
+  li {
+    display: flex;
+    height: 40px;
+    list-style-type: none;
   }
 
 </style>

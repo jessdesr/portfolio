@@ -1,7 +1,7 @@
 <template>
   <div id="wrapper">
     <div class=container-fluid>
-      <div class=row>
+      <div>
         <Sidebar></Sidebar>
         <div class="main">
           <div class="header">
@@ -11,16 +11,39 @@
             <div class="inner container-fluid">
               <div class="row">
                 <div class="col-sm-5">
-                  <CardTile></CardTile>
-                  <SkillsTile></SkillsTile>
+                  <CardTile/>
+                  <SkillsTile/>
                 </div>
                 <div class="col-sm-7">
-                  <ProfileTile></ProfileTile>
-                  <InfoTile></InfoTile>
-                  <ExperimentsTile></ExperimentsTile>
+                  <ProfileTile/>
+                  <InfoTile/>
+                  <ExperimentsTile/>
                 </div>
               </div>
             </div>
+            <!-- <GridLayout
+                  :layout.sync="layout"
+                  :col-num="12"
+                  :row-height="20"
+                  :is-draggable="true"
+                  :is-resizable="true"
+                  :is-mirrored="false"
+                  :vertical-compact="true"
+                  :margin="[30, 30]"
+                  :use-css-transforms="true">
+              <GridItem v-for="(item, index) in layout"
+                        :key="index"
+                        :x="item.x"
+                        :y="item.y"
+                        :w="item.w"
+                        :h="item.h"
+                        :i="item.i"
+                        :minH="item.minH"
+                        :maxW="item.maxW"
+                        @resize="resizeEvent">
+                <component v-bind:is="item.i"></component>
+              </GridItem>
+            </GridLayout> -->
           </div>
         </div>
       </div>
@@ -29,12 +52,21 @@
 </template>
 
 <script>
+import VueGridLayout   from 'vue-grid-layout'
 import Sidebar         from './components/Sidebar'
 import CardTile        from './components/CardTile'
 import ProfileTile     from './components/ProfileTile'
 import SkillsTile      from './components/SkillsTile'
 import InfoTile        from './components/InfoTile'
 import ExperimentsTile from './components/ExperimentsTile'
+
+let testLayout = [
+  {'x': 0, 'y': 0, 'w': 5, 'h': 7, 'minH': 7, 'maxW': 5, 'i': CardTile},
+  {'x': 0, 'y': 1, 'w': 5, 'h': 3, 'i': SkillsTile},
+  {'x': 5, 'y': 0, 'w': 7, 'h': 9, 'maxW': 7, 'minH': 9, 'i': ProfileTile},
+  {'x': 5, 'y': 4, 'w': 7, 'h': 6, 'minH': 6, 'maxW': 7, 'i': InfoTile},
+  {'x': 5, 'y': 8, 'w': 7, 'h': 3, 'i': ExperimentsTile}
+]
 
 export default {
   name: 'App',
@@ -45,7 +77,21 @@ export default {
     ProfileTile,
     SkillsTile,
     InfoTile,
-    ExperimentsTile
+    ExperimentsTile,
+    GridLayout: VueGridLayout.GridLayout,
+    GridItem: VueGridLayout.GridItem
+  },
+
+  data () {
+    return {
+      layout: testLayout
+    }
+  },
+
+  methods: {
+    resizeEvent: function (i, newH, newW) {
+      console.log('RESIZE i=' + i + ', H=' + newH + ', W=' + newW)
+    }
   }
 }
 </script>
@@ -92,10 +138,55 @@ export default {
 
   .content {
     height: 100vh;
-    padding-top: 3rem;
+    padding-top: 4rem;
 
     .inner {
       padding: 3rem;
     }
+  }
+
+  .card {
+    font-size: 1rem;
+    font-weight: 400;
+    overflow: hidden;
+    border: 0px;
+    margin-bottom: 1.5rem;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+
+    &-profile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.75rem;
+      text-align: center;
+    }
+
+    h4 {
+      font-size: 1.125rem;
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+
+    h6 {
+      margin-top: .25rem;
+      font-size: .8125rem;
+      font-weight: 400;
+      color: rgba(0,0,0,.54);
+    }
+  }
+
+  .card-1 {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+  }
+
+  .card-1:hover {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  }
+
+  .vue-grid-item.vue-grid-placeholder {
+    background: transparent;
   }
 </style>
