@@ -1,27 +1,47 @@
 <template>
-  <div id="wrapper">
-    <div class=container-fluid>
-      <div>
-        <Sidebar></Sidebar>
-        <router-view/>
+  <div class="main">
+    <div class="header">
+      <h1 class="header-title">Profile</h1>
+    </div>
+    <div class="content">
+      <div class="inner container-fluid">
+        <div class="row">
+          <div class="col-sm-5">
+            <CardTile/>
+            <SkillsTile/>
+          </div>
+          <div class="col-sm-7">
+            <AboutTile/>
+            <InfoTile/>
+            <ExperimentsTile/>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Sidebar from './components/Sidebar'
+import CardTile        from '../components/CardTile'
+import AboutTile     from '../components/AboutTile'
+import SkillsTile      from '../components/SkillsTile'
+import InfoTile        from '../components/InfoTile'
+import ExperimentsTile from '../components/ExperimentsTile'
 
 export default {
   name: 'App',
 
   components: {
-    Sidebar,
+    CardTile,
+    AboutTile,
+    SkillsTile,
+    InfoTile,
+    ExperimentsTile,
   },
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
   h1 {
     font-size: 1.5rem;
@@ -32,7 +52,6 @@ export default {
   body {
     background: #f2f2f7;
     font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-    font-weight: 400;
   }
 
   .container-fluid {
@@ -87,29 +106,6 @@ export default {
       align-items: center;
       padding: 1.75rem;
       text-align: center;
-    }
-
-    &-header {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      height: 48px;
-      min-height: 48px;
-      padding: 0 1rem;
-      border-bottom: 1px solid rgba(0,0,0,.12);
-      background: #fff;
-
-      &-img {
-        margin-right: 0.5rem;
-      }
-    }
-
-    &-title {
-      display: flex;
-      align-items: center;
-      margin: 0;
-      font-size: 1.25rem;
-      font-weight: 400;
     }
 
     h4 {

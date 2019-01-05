@@ -1,13 +1,13 @@
 <template>
   <div class="card card-1">
     <div class="card-header">
-      <h3 class="card-title">Info</h3>
+      <img class="card-header-img" src="../assets/icons8-about.svg">
+      <h3 class="card-title">Information</h3>
     </div>
     <div class="info">
-      <div class="columns" v-for="(field, index) in fields" :key="index" :class="{ last: index==fields.length-1 }">
+      <div class="info-row" v-for="(field, index) in fields" :key="index" :class="{ last: index==fields.length-1 }">
         <div class="column title"> {{ field.title }}: </div>
         <div class="column data"> {{ field.data }} </div>
-        <span> BUTTS/SPANK </span>
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@ export default {
     height: 100%;
   }
 
-  .columns {
+  .info-row {
     height: 100%;
     display: flex;
     flex-direction: row;
