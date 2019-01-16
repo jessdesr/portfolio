@@ -100,13 +100,13 @@ export default {}
     font-weight: 400;
     color: #65747b;
     line-height: 40px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     text-decoration: none;
-    transition: color .2s ease-in-out;
-    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    :hover {
+      transition: color .2s ease-in-out;
+      color: #7e8e95;
+      text-decoration: none;
+    }
   }
 
   .profile {
