@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <div class="profile">
-      <img src="../assets/logo.svg">
+      <img src="../assets/logo.svg" alt="">
       <h5>Jess Desrochers</h5>
       <h6>Software Developer Extraordinaire</h6>
     </div>

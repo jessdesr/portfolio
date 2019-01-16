@@ -2,14 +2,14 @@
   <div class="card card-1">
     <div class="card-body">
       <div class="card-profile">
-        <img class="img-profile" src="../assets/profile.png">
+        <img class="img-profile" src="../assets/profile.png" alt="">
         <h4> Jess Desrochers </h4>
         <h6> Software Developer </h6>
         <div class="card-profile-icon-group">
           <ul>
             <li v-for="(external, index) in externals" :key="index">
               <a :href="external.link" :title="external.title" target="_blank" rel="noopener">
-                <img :src="external.source"/>
+                <img :src="external.source" :alt="'Link to ' + external.title"/>
               </a>
             </li>
           </ul>

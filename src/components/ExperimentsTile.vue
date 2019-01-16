@@ -1,7 +1,7 @@
 <template>
   <div class="card card-1">
     <div class="card-header">
-      <img class="card-header-img" src="../assets/icons8-for-you.svg">
+      <img class="card-header-img" src="../assets/icons8-for-you.svg" alt="">
       <h3 class="card-title">Fun Stuff!</h3>
     </div>
     <div class="card-body">

@@ -1,7 +1,7 @@
 <template>
   <div class="card card-1">
     <div class="card-header">
-      <img class="card-header-img" src="../assets/icons8-contacts.svg">
+      <img class="card-header-img" src="../assets/icons8-contacts.svg" alt="">
       <h3 class="card-title">
         About Me
       </h3>

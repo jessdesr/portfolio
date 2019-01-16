@@ -2,7 +2,7 @@
   <div class="card card-1 project">
     <div class="card-header">
       <div class="project-image">
-        <img :src="project.image"/>
+        <img :src="project.image" alt="Link to Project"/>
       </div>
       <div class="project-title">
         <h4>{{ project.title }}</h4>

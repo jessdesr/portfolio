@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <button v-on:click="$emit('toggle')" class="nav-toggle">
+    <button v-on:click="$emit('toggle')" class="nav-toggle" aria-label="Toggle Navigation">
       <v-icon name="bars"/>
     </button>
     <h1 class="header-title">{{ title }}</h1>
