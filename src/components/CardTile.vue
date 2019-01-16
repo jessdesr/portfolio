@@ -30,7 +30,7 @@ export default {
       externals: [
         { title: 'Github', link: 'https://github.com/jessdesr', source: github },
         { title: 'Twitter', link: 'https://twitter.com/jess_desrochers', source: twitter },
-        { title: 'LinkedIn', link: 'https://linkedin.com/jessdesr', source: linkedin }
+        { title: 'LinkedIn', link: 'https://linkedin.com/in/jessdesr', source: linkedin }
       ]
     }
   }
