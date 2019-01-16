@@ -8,7 +8,7 @@
       <div class="progressbar" v-for="(field, index) in fields" :key="index" :class="{ last: index==fields.length-1 }">
         <div class="progressbar-values">
           <span> {{ field.title }} </span>
-          <span> {{ field.percent }} </span>
+          <span></span>
         </div>
         <div class="progressbar-bar">
           <div class="progress" v-bind:style="{ width: field.percent }"/>
