@@ -5,17 +5,28 @@
       <h3 class="card-title">Fun Stuff!</h3>
     </div>
     <div class="card-body">
-      Besides playing around with HTML, CSS, and next-gen JS libraries, I juggle with a lot of frameworks and building tools to create great webapps. Here I have listed some of them:
-<br/>
-<br/>
-Git<br/>
-JavaScript ES5, ES6<br/>
-Node.js<br/>
-Webpack<br/>
-Server-Side Rendering<br/>
-XHR/ajax<br/>
-Sass/SCSS/Less<br/>
-Laravel/Lumen<br/>
+      <p>
+        In my free time, I am a huge fan of gaming of all kinds, from tabletop games to video games.  Some of my current favourites are:
+      </p>
+      <ul>
+        <li>Monster Hunter: World</li>
+        <li>Super Smash Brothers Ultimate</li>
+        <li>Gloomhaven</li>
+        <li>Destiny 2</li>
+        <li>Into The Breach</li>
+        <li>Flamme Rouge</li>
+      </ul>
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+  ul {
+    padding-inline-start: 20px;
+    margin-bottom: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+</style>

@@ -1,19 +1,11 @@
 <template>
   <div class="main">
-    <div class="header">
-      <h1 class="header-title">Profile</h1>
-    </div>
+    <Header v-on:toggle="$emit('toggle-sidebar')" title="Projects"/>
     <div class="content">
       <div class="inner container-fluid">
-        <div class="row">
-          <div class="col-sm-5">
-            <CardTile/>
-            <SkillsTile/>
-          </div>
-          <div class="col-sm-7">
-            <AboutTile/>
-            <InfoTile/>
-            <ExperimentsTile/>
+        <div v-masonry transition-duration="0.5s" item-selector=".item">
+          <div v-masonry-tile class="item col-md-12 col-xl-6" v-for="(project, index) in projects" :key="index">
+            <ProjectTile :project="project"/>
           </div>
         </div>
       </div>
@@ -22,116 +14,41 @@
 </template>
 
 <script>
-import CardTile        from '../components/CardTile'
-import AboutTile     from '../components/AboutTile'
-import SkillsTile      from '../components/SkillsTile'
-import InfoTile        from '../components/InfoTile'
-import ExperimentsTile from '../components/ExperimentsTile'
+import Header             from '../components/Header'
+import ProjectTile        from '../components/ProjectTile'
+import img                from '../assets/logo.svg'
+import hacktrack          from '../assets/hacktrackerlogo.png'
 
 export default {
   name: 'App',
 
   components: {
-    CardTile,
-    AboutTile,
-    SkillsTile,
-    InfoTile,
-    ExperimentsTile,
+    ProjectTile,
+    Header,
   },
+
+  data () {
+    return {
+      projects: [
+        {
+          title: 'Hack Track',
+          byline: 'Score tracker for Android: Netrunner',
+          image: hacktrack,
+          link: 'https://github.com/jessdesr/hack-tracker',
+          description: 'Hack Track is an Android application for use with the <i>Android: Netrunner</i> card game. It keeps track of the various resources, tokens, and actions that take place in the game. <br/> <li>Variable click track using touch gestures to increment/decrement clicks</li><li>Flipped resource counts for opponent\'s convenience</li><li>Unique layouts for the Corporation and the Runner</li>'
+        },
+        {
+          title: 'Personal Portfolio Site',
+          byline: 'What you\'re looking at right now!',
+          image: img,
+          link: 'https://github.com/jessdesr/portfolio',
+          description: '<p> Designed and implemented using the <code class="highlighter-rouge">Vue.js</code> framework, inspired by Material tiles and Single Page Application layouts.  The site is structured to be fairly reuseable, with most content inserted programatically, via a single constants file that can be modified easily.</p>'
+        },
+      ]
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-
-  h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0 0 0 1rem;
-  }
-
-  body {
-    background: #f2f2f7;
-    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-  }
-
-  .container-fluid {
-    height: 100%;
-    padding-left: 250px;
-  }
-
-  .main {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100vh;
-  }
-
-  .header {
-    background: #FFF;
-    color: #000;
-    position: fixed;
-    height: 4.0625rem;
-    z-index: 4;
-    width: 100%;
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
-
-    &-title {
-      margin-left: 3rem;
-      margin-top: 1rem;
-    }
-  }
-
-  .content {
-    height: 100vh;
-    padding-top: 4rem;
-
-    .inner {
-      padding: 3rem;
-    }
-  }
-
-  .card {
-    font-size: 1rem;
-    font-weight: 400;
-    overflow: hidden;
-    border: 0px;
-    margin-bottom: 1.5rem;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-tap-highlight-color: rgba(255,255,255,0);
-
-    &-profile {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1.75rem;
-      text-align: center;
-    }
-
-    h4 {
-      font-size: 1.125rem;
-      margin-top: 1rem;
-      margin-bottom: 0;
-    }
-
-    h6 {
-      margin-top: .25rem;
-      font-size: .8125rem;
-      font-weight: 400;
-      color: rgba(0,0,0,.54);
-    }
-  }
-
-  .card-1 {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
-  }
-
-  .card-1:hover {
-    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
-  }
-
-  .vue-grid-item.vue-grid-placeholder {
-    background: transparent;
-  }
 </style>

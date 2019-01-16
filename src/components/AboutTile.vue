@@ -8,13 +8,13 @@
     </div>
     <div class="card-body">
       <p>
-        As a software developer with 2 years of experience working in the fast paced world of startups, my skills have been sharpened on the job, where I learned to design robust, flexible, and beautiful software to meet complex and varied requirements.
+        As a software developer with 2 years of experience working in the fast-paced world of startups, my skills have been sharpened on the job, where I learned to design robust, flexible, and beautiful software to meet complex and varied requirements.  In my previous position as a software engineer at Control, a small FinTech startup in Vancouver, I thrived in a small team working to build features quickly and efficiently.
       </p>
       <p>
-        Until recently, I worked as a software engineer in a small team at Control, a Vancouver startup focused on finacial analytics for the business sector.  In this role I thrived not only as a developer able to  .
+        I am a champion for improving the development process and project management practices so.  In my opinion, a good development process can be the difference between a well-oiled machine and a hectic, unproductive environment.  My experience with Scrum, Kanban, and Extreme Programming has taught me that finding the right process can be key to the success (or failure!) of a product.
       </p>
       <p>
-        I’m currently freelancing and experimenting with new technologies while I pursue new opportunities.  Feel free to contact me through LinkedIn or through my e-mail!
+        I’m currently freelancing and experimenting with new technologies while I pursue new opportunities. Feel free to contact me via LinkedIn or through my e-mail!
       </p>
     </div>
   </div>
@@ -27,15 +27,19 @@ export default {
 
 <style lang="scss" scoped>
 
+  .card-body {
+    line-height: normal;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
   #profile-svg {
     position: relative;
     width: 1.375rem;
     height: 1.375rem;
     opacity: .87;
     margin-right: .5rem;
-  }
-
-  .card-body {
-    font-weight: 200;
   }
 </style>

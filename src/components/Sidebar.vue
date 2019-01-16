@@ -3,12 +3,12 @@
     <div class="profile">
       <img src="../assets/logo.svg">
       <h5>Jess Desrochers</h5>
-      <h6>Software Engineer Extraordinaire</h6>
+      <h6>Software Developer Extraordinaire</h6>
     </div>
     <div class="nav-list">
       <div class="nav">
         <ul>
-          <li>
+          <li v-on:click="$emit('shrink-sidebar')">
             <router-link to="/">
               <div class="img-container">
                 <v-icon name="user"/>
@@ -16,7 +16,7 @@
               <span>Profile</span>
             </router-link>
           </li>
-          <li>
+          <li v-on:click="$emit('shrink-sidebar')">
             <router-link to="/resume">
               <div class="img-container">
                 <v-icon name="file-alt"/>
@@ -24,7 +24,7 @@
               <span>Resume</span>
             </router-link>
           </li>
-          <li>
+          <li v-on:click="$emit('shrink-sidebar')">
             <router-link to="/projects">
               <div class="img-container">
                 <v-icon name="briefcase"/>
@@ -51,6 +51,7 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
+
   .sidebar {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     height: 100vh;
@@ -62,7 +63,12 @@ export default {}
     z-index: 999;
     background: #2d3844;
     color: #ccc;
-    transition: all 0.3s;
+    transition: all 0.7s;
+    transform: translate3d(-105%,0,0);
+
+    @media (min-width: 992px) {
+      transform: translateZ(0);
+    }
   }
 
   .sidebar-img {
@@ -111,6 +117,8 @@ export default {}
     img {
       height: 8rem;
       margin-bottom: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 50%;
     }
   }
 

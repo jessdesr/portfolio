@@ -1,9 +1,23 @@
 <template>
-  <div id="wrapper">
+  <div id="wrapper" :class="{nonscroll: isActive}">
     <div class=container-fluid>
       <div>
-        <Sidebar></Sidebar>
-        <router-view/>
+        <Sidebar v-on:shrink-sidebar="shrinkSidebar" :class="{active: isActive}"></Sidebar>
+         <transition
+          name="fade"
+          mode="out-in"
+        >
+          <router-view  v-on:toggle-sidebar="toggleSidebar"/>
+        </transition>
+        <transition
+          name="fade"
+          mode="out-in"
+        >
+          <div
+            class="sidebar-background"
+            v-show="isActive"
+            v-on:click="toggleSidebar"/>
+        </transition>
       </div>
     </div>
   </div>
@@ -18,10 +32,50 @@ export default {
   components: {
     Sidebar,
   },
+
+  data () {
+    return {
+      isActive: false
+    }
+  },
+
+  methods: {
+    toggleSidebar: function () {
+      this.isActive = !this.isActive
+    },
+    shrinkSidebar: function () {
+      this.isActive = false
+    }
+  },
 }
 </script>
 
 <style lang="scss">
+  .active {
+    transform: translateZ(0) !important;
+  }
+
+  .nonscroll {
+    overflow: hidden;
+  }
+
+  .sidebar-background {
+    display: inherit !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1;
+    background-color: rgba(0,0,0,.2);
+  }
+
+  .sidebar-background[style*="display: none;"] {
+    opacity: 0;
+    pointer-events: none; /* disable user interaction */
+    user-select: none; /* disable user selection */
+}
 
   h1 {
     font-size: 1.5rem;
@@ -37,7 +91,12 @@ export default {
 
   .container-fluid {
     height: 100%;
-    padding-left: 250px;
+    padding: 0px;
+    transition: padding 0.65s ease;
+
+    @media (min-width: 992px) {
+      padding-left: 250px;
+    }
   }
 
   .main {
@@ -47,27 +106,14 @@ export default {
       height: 100vh;
   }
 
-  .header {
-    background: #FFF;
-    color: #000;
-    position: fixed;
-    height: 4.0625rem;
-    z-index: 4;
-    width: 100%;
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
-
-    &-title {
-      margin-left: 3rem;
-      margin-top: 1rem;
-    }
-  }
-
   .content {
     height: 100vh;
     padding-top: 4rem;
 
     .inner {
       padding: 3rem;
+          max-width: 1400px;
+
     }
   }
 
@@ -93,15 +139,17 @@ export default {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      height: 48px;
       min-height: 48px;
       padding: 0 1rem;
-      border-bottom: 1px solid rgba(0,0,0,.12);
       background: #fff;
 
       &-img {
         margin-right: 0.5rem;
       }
+    }
+
+    &-body {
+      color: rgba(0,0,0,.65);
     }
 
     &-title {

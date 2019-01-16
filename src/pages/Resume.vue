@@ -1,16 +1,11 @@
 <template>
   <div class="main">
-    <div class="header">
-      <h1 class="header-title">Resume</h1>
-    </div>
+    <Header v-on:toggle="$emit('toggle-sidebar')" title="Resume"/>
     <div class="content">
       <div class="inner container-fluid">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <ExperienceTile/>
-          </div>
-          <div class="col-lg-6">
-            <EducationTile/>
           </div>
         </div>
       </div>
@@ -20,12 +15,14 @@
 
 <script>
 import ExperienceTile from '../components/ExperienceTile'
+import Header         from '../components/Header'
 
 export default {
   name: 'App',
 
   components: {
     ExperienceTile,
+    Header,
   },
 }
 </script>
@@ -53,21 +50,6 @@ export default {
       flex-direction: column;
       width: 100%;
       height: 100vh;
-  }
-
-  .header {
-    background: #FFF;
-    color: #000;
-    position: fixed;
-    height: 4.0625rem;
-    z-index: 4;
-    width: 100%;
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
-
-    &-title {
-      margin-left: 3rem;
-      margin-top: 1rem;
-    }
   }
 
   .content {

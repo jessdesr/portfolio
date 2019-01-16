@@ -30,7 +30,7 @@ export default {
       externals: [
         { title: 'Github', link: 'https://github.com/jessdesr', source: github },
         { title: 'Twitter', link: 'https://twitter.com/jess_desrochers', source: twitter },
-        { title: 'LinkedIn', link: 'https://linkedin.com/jess-desrochers', source: linkedin }
+        { title: 'LinkedIn', link: 'https://linkedin.com/jessdesr', source: linkedin }
       ]
     }
   }
@@ -41,6 +41,10 @@ export default {
   .img-profile {
     border-radius: 50%;
     width: 8rem;
+  }
+
+  .card-profile {
+    color: rgba(0,0,0,.87);
   }
 
   .card-profile-icon-group {

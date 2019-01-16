@@ -5,9 +5,11 @@ import App from './App'
 import router from './router'
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
+import {VueMasonryPlugin} from 'vue-masonry'
 
 Vue.config.productionTip = false
 Vue.component('v-icon', Icon)
+Vue.use(VueMasonryPlugin)
 
 /* eslint-disable no-new */
 new Vue({

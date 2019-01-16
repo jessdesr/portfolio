@@ -14,7 +14,7 @@
             </span>
             <span class="dates"> {{ field.dates[0] }} - {{ field.dates[1] }} </span>
           </div>
-          <p> {{ field.description }} </p>
+          <p v-html="field.description"></p>
         </li>
       </ul>
     </div>
@@ -27,17 +27,11 @@ export default {
     return {
       fields: [
         {
-          title: 'Front End Developer', location: 'Control', dates: ['2020', '2021'], description: 'Conjured beautiful, award-winning designs into holistic and responsive webexperiences. Development of small bits and pieces for various content management systems.'
+          title: 'Software Engineer', location: 'Control', dates: ['Jan 2017', 'Dec 2018'], description: '<li>Led the drive to update development processes acting as Scrum Master, improving employee morale and efficiency</li><li>Updated billing system to intelligently handle pricing changes and upgrades/downgrades</li><li>Managed servers on Linode and Google Cloud Platform, reducing unnecessary costs and improving clarity</li><li>Converted numerous complex designs (using Sketch) to polished features in a Vue/Node.js stack.<li>Worked directly with customers to properly outline requirements and deliver on-time and on-spec</li>'
         },
         {
-          title: 'Front End Developer', location: 'Control', dates: ['2020', '2021'], description: 'Conjured beautiful, award-winning designs into holistic and responsive webexperiences. Development of small bits and pieces for various content management systems.'
-        },
-        {
-          title: 'Front End Developer', location: 'Control', dates: ['2020', '2021'], description: 'Conjured beautiful, award-winning designs into holistic and responsive webexperiences. Development of small bits and pieces for various content management systems.'
-        },
-        {
-          title: 'Front End Developer', location: 'Control', dates: ['2020', '2021'], description: 'Conjured beautiful, award-winning designs into holistic and responsive webexperiences. Development of small bits and pieces for various content management systems.'
-        },
+          title: 'B.A. Computer Science', location: 'University of British Columbia', dates: ['Sep 2015', 'Jan 2017'], description: '<li>Completed 80 credits towards degree</li><li>Executive Member of U.B.C. Mahjong Club</li>'
+        }
       ]
     }
   }
@@ -49,13 +43,12 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 100%;
   }
 
   .timeline {
     list-style: none;
-    margin: 0 0 0 .625rem;
-    padding: 0;
+    padding: 1rem 1rem 0 1rem;
+    margin: 0;
 
     li {
       .title {
@@ -64,6 +57,7 @@ export default {
         font-size: 1.25rem;
         font-weight: 600;
         margin: 0;
+        color: #212529;
       }
 
       :first-child {
@@ -74,7 +68,7 @@ export default {
 
       position: relative;
       margin: 0;
-      padding: 0 0 1rem 1rem;
+      padding: 0 0 1rem 1.25rem;
       border-left: 2px solid rgba(0,0,0,.12);
 
       .details {
@@ -107,7 +101,13 @@ export default {
 
       p {
         margin: 0 0 .625rem;
+        font-size: 0.9375rem;
+        text-align: justify;
         color: rgba(0,0,0,.65);
+
+        /deep/ li {
+          list-style: inside;
+        }
       }
     }
 
@@ -137,7 +137,7 @@ export default {
     vertical-align: middle;
   }
 
-  :last-of-type {
-    border: 0px !important;
+  li:last-of-type {
+    border: 2px solid #ffffff !important;
   }
 </style>
