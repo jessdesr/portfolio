@@ -9,7 +9,7 @@
         <small>{{ project.byline }}</small>
       </div>
       <div class="project-link">
-        <a :href="project.link">
+        <a :href="project.link" target="_blank" rel="noopener">
           <v-icon name="external-link-alt"/>
         </a>
       </div>

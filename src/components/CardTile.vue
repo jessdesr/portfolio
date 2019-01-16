@@ -8,7 +8,7 @@
         <div class="card-profile-icon-group">
           <ul>
             <li v-for="(external, index) in externals" :key="index">
-              <a :href="external.link" :title="external.title" target="_blank">
+              <a :href="external.link" :title="external.title" target="_blank" rel="noopener">
                 <img :src="external.source"/>
               </a>
             </li>

@@ -33,7 +33,7 @@
             </router-link>
           </li>
           <li>
-            <a href="wefwwef">
+            <a href="http://jessdesrochers.com/blog" target="_blank" rel="noopener">
               <div class="img-container">
                 <v-icon name="newspaper"/>
               </div>
