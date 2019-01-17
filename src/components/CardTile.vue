@@ -23,6 +23,7 @@
 const github   = require('../assets/github.svg')
 const twitter  = require('../assets/twitter.svg')
 const linkedin = require('../assets/linkedin.svg')
+const codepen  = require('../assets/codepen.svg')
 
 export default {
   data () {
@@ -30,7 +31,8 @@ export default {
       externals: [
         { title: 'Github', link: 'https://github.com/jessdesr', source: github },
         { title: 'Twitter', link: 'https://twitter.com/jess_desrochers', source: twitter },
-        { title: 'LinkedIn', link: 'https://linkedin.com/in/jessdesr', source: linkedin }
+        { title: 'LinkedIn', link: 'https://linkedin.com/in/jessdesr', source: linkedin },
+        { title: 'Codepen', link: 'https://codepen.io/jessdesr/', source: codepen },
       ]
     }
   }
