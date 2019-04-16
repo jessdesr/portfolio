@@ -32,7 +32,8 @@
               <span>Projects</span>
             </router-link>
           </li>
-          <li>
+          <transition name="fade" mode="out-in">
+          <li key='1' v-if="!visible">
             <a href="http://jessdesrochers.com/blog" target="_blank" rel="noopener">
               <div class="img-container">
                 <v-icon name="newspaper"/>
@@ -40,6 +41,15 @@
               <span>Posts</span>
             </a>
           </li>
+          <li key='2' v-else v-on:click="$emit('shrink-sidebar')">
+            <router-link  to="/secretsauce">
+              <div class="img-container">
+                <v-icon name="newspaper"/>
+              </div>
+               <span v-on:click="onClick">S̵̥̥̋͗́̆̊̓͐͆͜é̷̡͖͂̋͐͜͠͠c̸̣̹͈̞̳̋͌͘r̸̠̦̭̽̏͐͑è̶̖͕̲̩̂̾͋̊́̈́͠ţ̴̛͎̠̲͛́̈́̃̓</span>
+            </router-link>
+          </li>
+          </transition>
         </ul>
       </div>
     </div>
@@ -47,7 +57,56 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      keys: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+      isChecked: {
+        0: false,
+        1: false,
+        2: false,
+        3: false,
+        4: false,
+        5: false,
+        6: false,
+        7: false,
+        8: false,
+        9: false
+      },
+      current: 0,
+      visible: false,
+    }
+  },
+  created () {
+    window.addEventListener('keyup', this.listen)
+  },
+  methods: {
+    onClick () {
+      this.visible = !this.visible
+    },
+    listen (e) {
+      const key = e.which || e.keyCode || e.detail
+      if (this.keys.includes(key)) {
+        if (key === this.keys[this.current]) {
+          this.current += 1
+          this.isChecked[this.current - 1] = true
+          if (this.current === this.keys.length) {
+            this.visible = !this.visible
+            this.current = 0
+            Object.keys(this.isChecked).forEach(k => {
+              this.isChecked[k] = false
+            })
+          }
+        } else {
+          Object.keys(this.isChecked).forEach(k => {
+            this.isChecked[k] = false
+          })
+          this.current = 0
+        }
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

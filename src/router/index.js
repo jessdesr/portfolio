@@ -30,6 +30,14 @@ const routes = [
       title: 'Jess Desrochers | Projects'
     }
   },
+
+  { path: '/secretsauce',
+    name: 'Get That Count',
+    component: require('@/pages/Secret.vue').default,
+    meta: {
+      title: 'Jess D̶̨͚̖̩́̈͘e̴̹̊̆́̕s̵̢͚̩̲̒̄r̵̛̻͈̥̓͜o̵͍̖̓͜c̶̡͎̟̳̄̈̂h̸͍̼̟̏͊͊ͅe̷̝͖̊r̵̨̘͛s̵͔̻͑ | Ṡ̷̻͎̚̕͠ę̴̮̱̀̾̍c̵̡̙̠̯̎r̶̮̄̂͠ĕ̴̩̈́t̶̡̻̂̾'
+    },
+  }
 ]
 
 const router = new Router({
