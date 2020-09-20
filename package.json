@@ -15,7 +15,8 @@
     "vue": "^2.6.11",
     "vue-awesome": "^4.1.0",
     "vue-particles": "^1.0.9",
-    "vue-router": "^3.4.3"
+    "vue-router": "^3.4.3",
+    "vue2-touch-events": "^2.3.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

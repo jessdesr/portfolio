@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper" :class="{nonscroll: isActive}">
+  <div id="wrapper" :class="{nonscroll: isActive}" v-touch:swipe.left="shrinkSidebar">
     <div class=container-fluid>
       <div>
         <Sidebar v-on:shrink-sidebar="shrinkSidebar" :class="{active: isActive}"></Sidebar>
@@ -8,7 +8,7 @@
           name="fade"
           mode="out-in"
         >
-          <router-view/>
+          <router-view v-touch:swipe.right="toggleSidebar"/>
         </transition>
         <transition
           name="fade"
@@ -193,7 +193,9 @@ export default {
   }
 
   .card-1:hover {
-    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    @media (min-width: 992px) {    
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    }
   }
 
   .vue-grid-item.vue-grid-placeholder {
