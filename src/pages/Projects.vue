@@ -1,11 +1,16 @@
 <template>
   <div class="main">
-    <Header v-on:toggle="$emit('toggle-sidebar')" title="Projects"/>
     <div class="content">
       <div class="inner container-fluid">
-        <div v-masonry transition-duration="0.5s" item-selector=".item">
-          <div v-masonry-tile class="item col-md-12 col-xl-6" v-for="(project, index) in projects" :key="index">
-            <ProjectTile :project="project"/>
+        <div class="row">
+          <div 
+            v-for="project in projects"
+            class="col-xl-6 col-md-12"
+            :key="project.title"
+          >
+            <ProjectTile 
+              :project="project"
+            />
           </div>
         </div>
       </div>
@@ -14,17 +19,15 @@
 </template>
 
 <script>
-import Header             from '../components/Header'
 import ProjectTile        from '../components/ProjectTile'
 import img                from '../assets/logo.svg'
 import hacktrack          from '../assets/hacktrackerlogo.png'
 
 export default {
-  name: 'App',
+  name: 'Projects',
 
   components: {
     ProjectTile,
-    Header,
   },
 
   data () {

@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    <Header v-on:toggle="$emit('toggle-sidebar')" title="Resume"/>
     <div class="content">
       <div class="inner container-fluid">
         <div class="row">
@@ -15,14 +14,12 @@
 
 <script>
 import ExperienceTile from '../components/ExperienceTile'
-import Header         from '../components/Header'
 
 export default {
-  name: 'App',
+  name: 'Resume',
 
   components: {
     ExperienceTile,
-    Header,
   },
 }
 </script>

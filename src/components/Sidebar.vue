@@ -32,7 +32,7 @@
               <span>Projects</span>
             </router-link>
           </li>
-          <transition name="fade" mode="out-in">
+          <!-- <transition name="fade" mode="out-in">
           <li key='1' v-if="!visible">
             <a href="http://jessdesrochers.com/blog" target="_blank" rel="noopener">
               <div class="img-container">
@@ -41,15 +41,7 @@
               <span>Posts</span>
             </a>
           </li>
-          <li key='2' v-else v-on:click="$emit('shrink-sidebar')">
-            <router-link  to="/secretsauce">
-              <div class="img-container">
-                <v-icon name="newspaper"/>
-              </div>
-               <span v-on:click="onClick">S̵̥̥̋͗́̆̊̓͐͆͜é̷̡͖͂̋͐͜͠͠c̸̣̹͈̞̳̋͌͘r̸̠̦̭̽̏͐͑è̶̖͕̲̩̂̾͋̊́̈́͠ţ̴̛͎̠̲͛́̈́̃̓</span>
-            </router-link>
-          </li>
-          </transition>
+          </transition> -->
         </ul>
       </div>
     </div>
@@ -120,7 +112,7 @@ export default {
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #2d3844;
+    background: #212e50;
     color: #ccc;
     transition: all 0.7s;
     transform: translate3d(-105%,0,0);
@@ -163,7 +155,7 @@ export default {
     text-decoration: none;
     :hover {
       transition: color .2s ease-in-out;
-      color: #7e8e95;
+      color: #ccc;
       text-decoration: none;
     }
   }
@@ -174,9 +166,8 @@ export default {
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
 
     img {
-      height: 8rem;
+      height: 9rem;
       margin-bottom: 1rem;
-      border: 2px solid #ccc;
       border-radius: 50%;
     }
   }

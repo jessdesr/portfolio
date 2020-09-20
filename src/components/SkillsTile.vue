@@ -70,7 +70,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #2d3844;
+  background-color: #212e50;
   transition: all 2s;
 }
 </style>

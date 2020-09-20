@@ -42,7 +42,7 @@ export default {
 <style lang="scss">
   .img-profile {
     border-radius: 50%;
-    width: 8rem;
+    width: 9rem;
   }
 
   .card-profile {

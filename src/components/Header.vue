@@ -32,7 +32,7 @@ export default {
 
     &-title {
       font-size: 1.5rem;
-      font-weight: 600;
+      // font-weight: 600;
       @media (min-width: 992px) {
         margin-left: 2rem;
       }

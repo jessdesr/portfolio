@@ -8,7 +8,7 @@
     </div>
     <div class="card-body">
       <p>
-        As a software developer with 2 years of experience working in the fast-paced world of startups, my skills have been sharpened on the job, where I learned to design robust, flexible, and beautiful software to meet complex and varied requirements.  In my previous position as a software engineer at Control, a small FinTech startup in Vancouver, I thrived in a small team working to build features quickly and efficiently.
+        As a software developer with 3 years of experience working in the fast-paced world of startups, my skills have been sharpened on the job, where I learned to design robust, flexible, and beautiful software to meet complex and varied requirements.  In my previous position as a software engineer at Control, a small FinTech startup in Vancouver, I thrived in a small team working to build features quickly and efficiently.
       </p>
       <p>
         I am a champion for improving the development process and project management practices so.  In my opinion, a good development process can be the difference between a well-oiled machine and a hectic, unproductive environment.  My experience with Scrum, Kanban, and Extreme Programming has taught me that finding the right process can be key to the success (or failure!) of a product.

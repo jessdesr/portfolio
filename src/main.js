@@ -8,13 +8,10 @@ import App from './App'
 import router from './router'
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
-import {VueMasonryPlugin} from 'vue-masonry'
-import axios from '../src/mixins/vue-axios'
 import VueParticles from 'vue-particles'
 
 Vue.config.productionTip = false
 Vue.component('v-icon', Icon)
-Vue.use(VueMasonryPlugin)
 Vue.use(BootstrapVue)
 Vue.use(VueParticles)
 
@@ -22,7 +19,6 @@ Vue.use(VueParticles)
 new Vue({
   el: '#app',
   router,
-  axios,
   components: { App },
   template: '<App/>'
 })

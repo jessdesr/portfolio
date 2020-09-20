@@ -27,7 +27,13 @@ export default {
     return {
       fields: [
         {
-          title: 'Software Engineer', location: 'Control', dates: ['Jan 2017', 'Dec 2018'], description: '<li>Led the drive to update development processes acting as Scrum Master, improving employee morale and efficiency</li><li>Updated billing system to intelligently handle pricing changes and upgrades/downgrades</li><li>Managed servers on Linode and Google Cloud Platform, reducing unnecessary costs and improving clarity</li><li>Converted numerous complex designs (using Sketch) to polished features in a Vue/Node.js stack.<li>Worked directly with customers to properly outline requirements and deliver on-time and on-spec</li>'
+          title: 'Software Engineer', location: 'UrbanLogiq  -  Vancouver, BC', dates: ['Mar 2019', 'Mar 2020'], description: '<li>Spearheaded shift to modular, productized platform via implentation of a unified component library</li><li>Optimized the project management workflow, improving communication and efficiency within the development team</li><li>Conceived, designed, developed, and deployed a major platform feature in my first month, delivering significant value to multiple clients</li><li>Rebuilt SQL queries and database structure, improving performance of key features by over 400%</li><li>Unified design and development of multiple contracts, vastly improving time to deliver and maintainability of features</li><li>Collaborated with leadership to lead multiple meetings and build client trust, successfully securing a long-term contract with the Canadian government'
+        },
+        {
+          title: 'Software Engineer', location: 'Control - Vancouver, BC', dates: ['Jan 2017', 'Dec 2018'], description: '<li>Led the drive to update development processes acting as Scrum Master, improving employee morale and efficiency</li><li>Updated billing system to intelligently handle pricing changes and upgrades/downgrades</li><li>Managed servers on Linode and Google Cloud Platform, reducing unnecessary costs and improving clarity</li><li>Converted numerous complex designs (using Sketch) to polished features in a Vue/Node.js stack.<li>Worked directly with customers to properly outline requirements and deliver on-time and on-spec</li>'
+        },
+        {
+          title: 'Bookkeeper', location: 'Zen Bookkeeping - Surrey, BC', dates: ['Jan 2017', 'Dec 2018'], description: '<li>Handled books of 3 separate small businesses, running day-to-day entries within Sage 50 Accounting software and customizing Excel spreadsheets for enhanced data entry</li><ul><li>Dealt with purchases, sales, payroll, and general ledgers</li><li>Posted journal entries, reconciled accounts and prepared monthly trial balance, and prepared financial statements</li></ul><li>Became subject matter expert in multiple industries, saving time and catching errors in supplier and vendor invoices and increasing PST savings</li>'
         },
         {
           title: 'B.A. Computer Science', location: 'University of British Columbia', dates: ['Sep 2015', 'Jan 2017'], description: '<li>Completed 80 credits towards degree</li><li>Executive Member of U.B.C. Mahjong Club</li>'
@@ -102,7 +108,6 @@ export default {
       p {
         margin: 0 0 .625rem;
         font-size: 0.9375rem;
-        text-align: justify;
         color: rgba(0,0,0,.65);
 
         /deep/ li {
@@ -121,7 +126,7 @@ export default {
       border-radius: 40%;
       background-color: #fff;
       padding: .25rem;
-      border: 2px solid #2d3844;
+      border: 2px solid #212e50;
     }
   }
 

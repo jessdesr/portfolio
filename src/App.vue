@@ -3,11 +3,12 @@
     <div class=container-fluid>
       <div>
         <Sidebar v-on:shrink-sidebar="shrinkSidebar" :class="{active: isActive}"></Sidebar>
-         <transition
+        <Header v-on:toggle="toggleSidebar" :title="currentRouteName"/>
+        <transition
           name="fade"
           mode="out-in"
         >
-          <router-view  v-on:toggle-sidebar="toggleSidebar"/>
+          <router-view/>
         </transition>
         <transition
           name="fade"
@@ -25,23 +26,35 @@
 
 <script>
 import Sidebar from './components/Sidebar'
+import Header from './components/Header'
 
 export default {
   name: 'App',
 
   components: {
+    Header,
     Sidebar,
   },
 
   data () {
     return {
-      isActive: false
+      isActive: false,
+      title: "ois"
+    }
+  },
+
+  computed: {
+     currentRouteName() {
+        return this.$route.name;
     }
   },
 
   methods: {
     toggleSidebar: function () {
       this.isActive = !this.isActive
+    },
+    updateHeader: function() {
+      this.title = "oij"
     },
     shrinkSidebar: function () {
       this.isActive = false
@@ -185,5 +198,18 @@ export default {
 
   .vue-grid-item.vue-grid-placeholder {
     background: transparent;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition-property: opacity;
+    transition-duration: .25s;
+  }
+
+  .fade-enter-active {
+    transition-delay: .0s;
+  }
+
+  .fade-enter, .fade-leave-active {
+    opacity: 0
   }
 </style>
